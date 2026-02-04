@@ -1,0 +1,1 @@
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl_certs/endika-pyme.local.key -out /etc/apache2/ssl_certs/endika-pyme.local.crt -subj "/C=ES/ST=LaRioja/L=Villamediana/O=FPDRioja/OU=DAW/CN=endika-pyme.local" -addext "subjectAltName = DNS:endika-pyme.local,DNS:www.endika-pyme.local"

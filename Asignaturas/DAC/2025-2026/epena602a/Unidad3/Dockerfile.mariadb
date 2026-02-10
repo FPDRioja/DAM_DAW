@@ -1,0 +1,9 @@
+FROM mariadb:lts
+
+ENV MYSQL_DATABASE=joomla \
+    MYSQL_USER=joomlauser \
+    MYSQL_PASSWORD=org 
+
+EXPOSE 80
+
+VOLUME /var/lib/mysql

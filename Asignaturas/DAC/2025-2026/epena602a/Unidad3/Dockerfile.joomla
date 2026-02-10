@@ -1,0 +1,10 @@
+FROM joomla:latest
+
+ENV JOOMLA_DB_HOST=mariadb \
+    JOOMLA_DB_USER=joomlauser \
+    JOOMLA_DB_PASSWORD=org \
+    JOOMLA_DB_NAME=joomla 
+
+EXPOSE 80
+
+VOLUME /var/www/html

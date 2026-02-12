@@ -27,3 +27,4 @@ La asignatura de Bases de Datos tiene como objetivo dotar al alumnado de los con
 
 - [https://leetcode.com](https://leetcode.com/problemset/database/)
 - [https://www.sqlzoo.net](https://www.sqlzoo.net/wiki/SQL_Tutorial)
+- [https://freesql.com/](https://freesql.com/)

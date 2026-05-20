@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="impresoras">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="impresora" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="impresora">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="marca" type="xs:string"/>
+        <xs:element name="modelo" type="xs:string"/>
+        <xs:element name="peso">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minExclusive value="0"/>
+              <xs:fractionDigits value="2"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="tamaño" type="xs:string" maxOccurs="unbounded"/>
+        <xs:element name="cartucho">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="C-[0-9][0-9][0-9][A-Z][A-Z]*"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <!-- Hay varias maneras de conseguir esto, pongo una que funciona:
+        enRed puede estar o no, si lo está solo una vez, y siempre ha de estar vacío-->
+        <xs:element name="enred" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:length value="0"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+      <!-- Un año gregoriano ha de ser entero, añadimos la restricción de que el mínimo sea el 1-->
+      <xs:attribute name="compra">
+        <xs:simpleType>
+          <xs:restriction base="xs:gYear">
+            <xs:minInclusive value="0001"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="numSerie" type="xs:ID" use="required"/>
+      <xs:attribute name="tipo" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="matricial"/>
+            <xs:enumeration value="láser"/>
+            <xs:enumeration value="tinta"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

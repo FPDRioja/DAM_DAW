@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE agenda>
+<agenda>
+	<contacto>
+		<nombre>Juan</nombre>
+		<apellidos>Garrido Pérez</apellidos>
+		<direccion>
+			<calle numero="1">Rúa Vieja</calle>
+			<codigo_postal>26001</codigo_postal>
+			<poblacion>Logroño</poblacion>
+			<provincia>La Rioja</provincia>
+		</direccion>
+		<telefonos>
+			<telefono_casa>941252525</telefono_casa>
+			<telefono_movil>6252525</telefono_movil>
+			<telefono_trabajo>641262626</telefono_trabajo>
+		</telefonos>
+	</contacto>
+	<contacto>
+		<nombre>Gabriel</nombre>
+		<apellidos>García Cuadrado</apellidos>
+		<direccion>
+			<calle numero="22">Otra calle</calle>
+			<codigo_postal>26008</codigo_postal>
+			<poblacion>Logroño</poblacion>
+			<provincia>La Rioja</provincia>
+		</direccion>
+		<telefonos>
+			<telefono_casa>9412552525</telefono_casa>
+			<telefono_movil>6552525</telefono_movil>
+			<telefono_trabajo>641552626</telefono_trabajo>
+		</telefonos>
+	</contacto>
+</agenda>

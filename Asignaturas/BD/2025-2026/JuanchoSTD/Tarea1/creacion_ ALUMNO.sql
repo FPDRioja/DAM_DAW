@@ -1,0 +1,4 @@
+CREATE USER garrido_suso_juancruz IDENTIFIED BY admin;
+GRANT CREATE SESSION TO garrido_suso_juancruz;
+
+GRANT CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE TO garrido_suso_juancruz;

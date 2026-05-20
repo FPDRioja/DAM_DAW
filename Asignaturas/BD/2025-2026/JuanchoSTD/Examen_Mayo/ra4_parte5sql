@@ -1,0 +1,76 @@
+-- ej 5.1
+
+INSERT INTO director (
+    id_director,
+    nombre,
+    apellidos,
+    nacionalidad
+) VALUES ( 5,
+           'Denis',
+           'Villeneuve',
+           'Canadiense' );
+
+COMMIT;
+
+INSERT INTO pelicula (
+    id_pelicula,
+    titulo,
+    anio,
+    genero,
+    duracion_min,
+    id_director
+) VALUES ( 7,
+           'Dune',
+           2021,
+           'Ciencia Ficción',
+           155,
+           5 );
+
+COMMIT;
+
+-- ej 5.2
+
+UPDATE emision e1
+SET
+    e1.precio = ( e1.precio + 1.5 )
+WHERE
+    e1.id_pelicula IN (
+        SELECT
+            e.id_pelicula
+        FROM
+                 emision e
+            JOIN pelicula p ON e.id_pelicula = p.id_pelicula
+        WHERE
+            p.duracion_min > 150
+    );
+
+COMMIT;
+
+UPDATE pelicula p
+SET
+    p.genero = 'Neo-noir'
+WHERE
+    p.titulo = 'Pulp Fiction';
+
+COMMIT;
+
+-- ej 5.3
+
+DELETE FROM emision e
+WHERE
+    e.id_pelicula IN (
+        SELECT
+            p.id_pelicula
+        FROM
+            pelicula p
+        WHERE
+            p.anio < 2000
+    );
+
+COMMIT;
+
+DELETE FROM reparto r
+WHERE
+    r.id_pelicula = 6;
+
+COMMIT;

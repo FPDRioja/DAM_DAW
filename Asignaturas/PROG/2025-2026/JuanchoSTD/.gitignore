@@ -1,0 +1,9 @@
+*.gdoc
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+*.class
+Chuleta*
+chuleta*

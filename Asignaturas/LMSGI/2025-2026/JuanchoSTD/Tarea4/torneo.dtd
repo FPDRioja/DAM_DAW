@@ -1,0 +1,22 @@
+<!ELEMENT torneo (participante+)>
+<!--
+anteriorGanador, en el ejemplo, resulta estar formado como ID
+Pero asumo que ese id constará en el torneo anterior 
+y esa validación queda por fuera, así que lo dejo en CDATA
+-->
+<!ATTLIST torneo
+          anteriorGanador CDATA #REQUIRED
+          edicion CDATA #REQUIRED>
+<!ELEMENT participante (nombre, edad, pais, cabezaDeSerie?)>
+<!ATTLIST participante
+          idP ID #REQUIRED
+          pareja IDREF #REQUIRED>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!-- 
+Si bien no consta explícitamente, en el enunciado se dice si se es 
+cabeza de serie o no, y el ejemplo pone una etiqueta vacía de contenido, 
+luego creo que la mejor definición sobre contenido es EMPTY en vez de PCDATA
+-->
+<!ELEMENT cabezaDeSerie EMPTY>

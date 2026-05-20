@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talleres - Manos al Barro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .cabecera {
+            background-image: url('../assets/img/formulario_talleres.jpg');
+        }
+
+        h1 {
+            font-weight: 700;
+        }
+
+        h4 {
+            color: var(--color-medio) !important;
+        }
+
+        h2 {
+            font-family: 'Libre Baskerville', serif;
+            color: var(--color-oscuro) !important;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .formulario-talleres {
+            background-color: var(--color-claro);
+        }
+
+        .btn-danger-intenso {
+            background-color: var(--color-oscuro);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.getElementById('menu-principal').classList.toggle('activo');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- El header contiene menu, logo y carrito-->
+    <header>
+        <div class="contenedor contenedor-cabecera">
+            <div class="menu-hamburguesa" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img loading="lazy" src="assets/img/logo.png" alt="Manos al Barro">
+            </div>
+            <nav>
+                <ul class="menu" id="menu-principal">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a class="activo" href="">Talleres</a></li>
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Principal-->
+    <main>
+        <!-- sección de presentacion cabecera -->
+        <section class="cabecera">
+            <h1>Talleres y Cursos</h1>
+            <p>Descubre nuestros talleres y sumérgete en el mundo de la cerámica.</p>
+        </section>
+
+        <!-- Seccion del formulario de inscripción -->
+        <section class="py-5 formulario-talleres">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="card mb-4">
+                            <div class="card-body p-4 p-md-5">
+                                <h2 class="card-title text-center mb-4">
+                                    Inscripción a Talleres
+                                </h2>
+                                <p class="card-subtitle text-center mb-5">
+                                    Rellena el siguiente formulario para inscribirte en nuestros talleres de cerámica.
+                                </p>
+
+                                <form class="was-validated">
+                                    <!-- Datos personales -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 mb-3">
+                                            <h4>Datos Personales</h4>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nombre" class="form-label">Nombre*</label>
+                                            <input type="text" class="form-control" id="nombre"
+                                                placeholder="Ej. Juan Cruz" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, ingresa tu nombre.
+                                            </div>
+                                            <div class="valid-feedback">
+                                                ¡Bienvenido!
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="apellidos" class="form-label">Apellidos*</label>
+                                            <input type="text" class="form-control" id="apellidos"
+                                                placeholder="Ej. García López" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, ingresa tus apellidos.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="email" class="form-label">Email*</label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="ejemplo@correo.com" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, ingresa un email válido.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="telefono" class="form-label">Teléfono*</label>
+                                            <input type="tel" class="form-control" id="telefono"
+                                                placeholder="Ej. 612345678" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, ingresa un número de teléfono.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Detalles del taller -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 mb-3">
+                                            <h4>Detalles del Taller</h4>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="tipo-taller" class="form-label">Tipo de Taller*</label>
+                                            <select class="form-select" id="tipo-taller" required>
+                                                <option value="" selected disabled>Selecciona un tipo de taller</option>
+                                                <option value="iniciacion">Iniciación a la Cerámica</option>
+                                                <option value="torno">Torno Alfarero</option>
+                                                <option value="escultura">Escultura Cerámica</option>
+                                                <option value="esmaltado">Técnicas de Esmaltado</option>
+                                                <option value="raku">Raku</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor, selecciona un tipo de taller.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nivel" class="form-label">Nivel*</label>
+                                            <select class="form-select" id="nivel" required>
+                                                <option value="" selected disabled>Selecciona tu nivel</option>
+                                                <option value="principiante">Principiante</option>
+                                                <option value="intermedio">Intermedio</option>
+                                                <option value="avanzado">Avanzado</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor, selecciona tu nivel.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="horario" class="form-label">Horario Preferido*</label>
+                                            <select class="form-select" id="horario" required>
+                                                <option value="" selected disabled>Selecciona un horario</option>
+                                                <option value="manana">Mañanas (10:00 - 13:00)</option>
+                                                <option value="tarde">Tardes (16:00 - 19:00)</option>
+                                                <option value="finde">Fin de semana (11:00 - 14:00)</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor, selecciona un horario.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="fecha-inicio" class="form-label">Fecha de Inicio
+                                                Deseada*</label>
+                                            <input type="date" class="form-control" id="fecha-inicio"
+                                                placeholder="DD/MM/AAAA" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, selecciona una fecha de inicio.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Información adicional -->
+                                    <div class="row mb-4">
+                                        <div class="col-12 mb-3">
+                                            <h4>Información Adicional</h4>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="experiencia" class="form-label">¿Tienes experiencia previa en
+                                                cerámica?</label>
+                                            <textarea class="form-control" id="experiencia" rows="3"
+                                                placeholder="Cuéntanos tu experiencia previa: cursos realizados, técnicas que conoces, años de práctica, etc."></textarea>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="expectativas" class="form-label">¿Qué esperas aprender en este
+                                                taller?</label>
+                                            <textarea class="form-control" id="expectativas" rows="3"
+                                                placeholder="Comparte tus objetivos y expectativas: técnicas específicas, tipos de piezas que te gustaría crear, habilidades que quieres desarrollar..."></textarea>
+                                            <div class="invalid-feedback">
+                                                Por favor, cuéntanos qué esperas aprender.
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="materiales" checked>
+                                                <label class="form-check-label" for="materiales">
+                                                    Deseo incluir el kit de materiales (coste adicional de 45€)
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="terminos" required>
+                                                <label class="form-check-label" for="terminos">
+                                                    Acepto los términos y condiciones*
+                                                </label>
+                                                <div class="invalid-feedback">
+                                                    Debes aceptar los términos y condiciones.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <small class="text-muted mb-3 d-block">* Campos obligatorios</small>
+                                            <button class="btn btn-primary btn-lg" type="submit" data-bs-toggle="modal"
+                                                data-bs-target="#modal-formulario-talleres">Enviar
+                                                Inscripción</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal" id="modal-formulario-talleres">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">¿Estás segura/o?</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            ¡Atención!, solicitar este taller reservará una plaza.
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-danger btn-danger-intenso"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Reservar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- El footer contiene dirección y acceso a las redes sociales-->
+        <footer>
+            <div class="contenedor">
+                <div class="contenedor-footer">
+                    <div class="info-footer">
+                        <h3>Manos al Barro</h3>
+                        <p>C/ Lorem ipsum 23</p>
+                        <p>34567 Roma</p>
+                    </div>
+                    <div class="contacto-footer">
+                        <p>Teléfono:<br>456985896</p>
+                        <p>E-Mail:<br>contacto@manosalbarro.es</p>
+                    </div>
+                </div>
+                <div class="redes-sociales">
+                    <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                    <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

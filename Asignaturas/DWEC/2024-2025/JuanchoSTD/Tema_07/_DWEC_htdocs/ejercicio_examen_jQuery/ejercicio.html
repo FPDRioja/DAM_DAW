@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Facturas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        #clienteSelect {
+            padding: 8px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #22df11;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #6ec2ad91;
+        }
+        #facturas {
+            margin-top: 30px;
+        }
+        .mensaje {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <h1>Sistema de Facturas</h1>
+    
+    <div>
+        <label for="clienteSelect">Selecciona un cliente:</label>
+        <select id="clienteSelect">
+            <option value="">-- Seleccione un cliente --</option>
+        </select>
+    </div>
+    
+    <div id="facturas">
+        <h2>Facturas del cliente</h2>
+        <p class="mensaje">Seleccione un cliente para ver sus facturas</p>
+        <div id="tablaFacturas"></div>
+    </div>    
+</body>
+</html>

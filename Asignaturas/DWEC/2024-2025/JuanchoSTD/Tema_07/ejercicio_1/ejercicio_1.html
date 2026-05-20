@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas Pokémon Aleatorias</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #e3350d;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #3b5ba8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2a4580;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .pokemon-card {
+            width: 175;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden;
+            transition: transform 0.3s;
+            background-color: white;
+        }
+        .pokemon-card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            padding: 10px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+            background-color: #f2f2f2;
+            border-bottom: 2px solid #ddd;
+        }
+        .card-image {
+            display: flex;
+            justify-content: center;
+            background-color: #f8f8f8;
+            padding: 15px;
+        }
+        .card-image img {
+            width: 150px;
+            height: 150px;
+        }
+        .card-types {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            background-color: white;
+        }
+        .type-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: white;
+            font-weight: bold;
+        }
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px;
+            color: #666;
+        }
+        /* Colores por tipo */
+        .normal { background-color: #A8A878; }
+        .fire { background-color: #F08030; }
+        .water { background-color: #6890F0; }
+        .electric { background-color: #F8D030; }
+        .grass { background-color: #78C850; }
+        .ice { background-color: #98D8D8; }
+        .fighting { background-color: #C03028; }
+        .poison { background-color: #A040A0; }
+        .ground { background-color: #E0C068; }
+        .flying { background-color: #A890F0; }
+        .psychic { background-color: #F85888; }
+        .bug { background-color: #A8B820; }
+        .rock { background-color: #B8A038; }
+        .ghost { background-color: #705898; }
+        .dragon { background-color: #7038F8; }
+        .dark { background-color: #705848; }
+        .steel { background-color: #B8B8D0; }
+        .fairy { background-color: #EE99AC; }
+    </style>
+</head>
+<body>
+    <h1>Cartas Pokémon Aleatorias</h1>
+    
+    <div class="controls">
+        <button id="xhr-btn">Cargar con XMLHttpRequest</button>
+        <button id="fetch-btn">Cargar con Fetch API</button>
+        <button id="jquery-btn">Cargar con jQuery</button>
+    </div>
+    
+    <div id="xhr-container" class="container"></div>
+    <div id="fetch-container" class="container"></div>
+    <div id="jquery-container" class="container"></div>
+
+    <script>
+        
+
+    </script>
+</body>
+</html>

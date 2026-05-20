@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Manos al Barro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/tienda.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.getElementById('menu-principal').classList.toggle('activo');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Cabecera con menú, logo y carrito -->
+    <header>
+        <div class="contenedor contenedor-cabecera">
+            <div class="menu-hamburguesa" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img loading="lazy" src="assets/img/logo.png" alt="Manos al Barro">
+            </div>
+            <nav>
+                <ul class="menu" id="menu-principal">
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a class="activo" href="tienda.html">Tienda</a></li>
+                    <li><a href="formulario_talleres.html">Talleres</a></li>
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="row cabecera-carrusel">
+            <div id="carouselCabecera" class="carousel slide col-md-11 col-lg-9" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img loading="lazy" src="assets/img/cabecera_tienda.png" class="w-100" alt="Nuestra Tienda">
+                        <div class="carousel-caption">
+                            <h1>Nuestra Tienda</h1>
+                            <p>Descubre nuestros productos artesanales de cerámica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Búsqueda  de productos -->
+        <section class="busqueda-productos">
+            <div class="contenedor">
+                <h2>Busca o explora nuestros productos</h2>
+
+                <form class="formulario-busqueda">
+                    <!-- Primera fila  campo de búsqueda y selección de categoría -->
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="busqueda">Buscar productos</label>
+                            <input type="text" id="busqueda" placeholder="Busca nuestros productos">
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="categoria">Selección de categoría</label>
+                            <select id="categoria" class="select-categoria">
+                                <option selected disabled>Busca o selecciona una categoría</option>
+                                <option>Jarrones</option>
+                                <option>Platos</option>
+                                <option>Tazas</option>
+                                <option>Macetas</option>
+                            </select>
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="mostrar-disponibles">
+                                <label for="mostrar-disponibles">Sólo actualmente disponible</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Segunda fila slider de precio y ordenar por -->
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="precio-slider">Incluye un rango de precios según tu presupuesto</label>
+                            <div class="slider-container">
+                                <span>0€</span>
+                                <input type="range" min="0" max="200" class="slider" id="precio-slider">
+                                <span>200€</span>
+                            </div>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label for="ordenar">Ordenar por</label>
+                            <select id="ordenar" class="select-orden">
+                                <option selected disabled>Ordenar resultados según</option>
+                                <option>Precio: menor a mayor</option>
+                                <option>Precio: mayor a menor</option>
+                                <option>Más recientes</option>
+                                <option>Más populares</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- productos -->
+        <section class="lista-productos">
+            <div class="contenedor">
+                <div class="grid-productos">
+                    <div class="producto-card">
+                        <div class="imagen-producto">
+                            <img loading="lazy" src="assets/img/manos_con_barro.png" alt="Persona trabajando con barro">
+                        </div>
+                        <div class="detalles-producto">
+                            <div class="categorias">
+                                <a href="#jarrones">Jarrones</a>
+                                <a href="#botijos">Botijos</a>
+                                <a href="#diseño-moderno">Diseño Moderno</a>
+                            </div>
+                            <div class="info-producto">
+                                <h4>LÍNEA IKEA</h4>
+                                <h3>Taza ikea nº2</h3>
+                                <p>LOREM IPSUM</p>
+                                <p>Sagittis, eu pretium massa quisque cursus augue massa cursus. Sed quisque velit,
+                                    auctor at lobortis hac tincidunt sodales id. Elit malesuada vel risus, in enim
+                                    sagittis at. Netus sagittis collevita aliquet urna quis.</p>
+                            </div>
+                            <div class="precio-producto">
+                                <span>12.50 €</span>
+                            </div>
+                            <div class="acciones-producto">
+                                <button class="btn small-button">Añadir al carrito</button>
+                                <div class="iconos-acciones">
+                                    <a href="#favorito"><i class="far fa-heart"></i></a>
+                                    <a href="#compartir"><i class="fas fa-share-alt"></i></a>
+                                    <a href="#mas-info"><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="imagen-producto">
+                            <img loading="lazy" src="assets/img/manos_con_barro.png" alt="Persona trabajando con barro">
+                        </div>
+                        <div class="detalles-producto">
+                            <div class="categorias">
+                                <a href="#platos">Platos</a>
+                                <a href="#diseño-moderno">Diseño Moderno</a>
+                            </div>
+                            <div class="info-producto">
+                                <h4>LÍNEA GAIA</h4>
+                                <h3>Plato gaia</h3>
+                                <p>LOREM IPSUM</p>
+                                <p>Sagittis, eu pretium massa quisque cursus augue massa cursus. Sed quisque velit,
+                                    auctor at lobortis hac tincidunt sodales id. Elit malesuada vel risus, in enim
+                                    sagittis at. Netus sagittis collevita aliquet urna quis.</p>
+                            </div>
+                            <div class="precio-producto">
+                                <span>12.50 €</span>
+                            </div>
+                            <div class="acciones-producto">
+                                <button class="btn small-button">Añadir al carrito</button>
+                                <div class="iconos-acciones">
+                                    <a href="#favorito"><i class="far fa-heart"></i></a>
+                                    <a href="#compartir"><i class="fas fa-share-alt"></i></a>
+                                    <a href="#mas-info"><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="imagen-producto">
+                            <img loading="lazy" src="assets/img/manos_con_barro.png" alt="Persona trabajando con barro">
+                        </div>
+                        <div class="detalles-producto">
+                            <div class="categorias">
+                                <a href="#jarrones">Jarrones</a>
+
+                                <a href="#diseño-moderno">Diseño Moderno</a>
+                            </div>
+                            <div class="info-producto">
+                                <h4>LÍNEA IKEA</h4>
+                                <h3>Taza ikea nº2</h3>
+                                <p>LOREM IPSUM</p>
+                                <p>Sagittis, eu pretium massa quisque cursus augue massa cursus. Sed quisque velit,
+                                    auctor at lobortis hac tincidunt sodales id. Elit malesuada vel risus, in enim
+                                    sagittis at. Netus sagittis collevita aliquet urna quis.</p>
+                            </div>
+                            <div class="precio-producto">
+                                <span>12.50 €</span>
+                            </div>
+                            <div class="acciones-producto">
+                                <button class="btn small-button">Añadir al carrito</button>
+                                <div class="iconos-acciones">
+                                    <a href="#favorito"><i class="far fa-heart"></i></a>
+                                    <a href="#compartir"><i class="fas fa-share-alt"></i></a>
+                                    <a href="#mas-info"><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="imagen-producto">
+                            <img loading="lazy" src="assets/img/manos_con_barro.png" alt="Persona trabajando con barro">
+                        </div>
+                        <div class="detalles-producto">
+                            <div class="categorias">
+                                <a href="#jarrones">Jarrones</a>
+                                <a href="#diseño-moderno">Diseño Moderno</a>
+                            </div>
+                            <div class="info-producto">
+                                <h4>LÍNEA IKEA</h4>
+                                <h3>Taza ikea nº2</h3>
+                                <p>LOREM IPSUM</p>
+                                <p>Sagittis, eu pretium massa quisque cursus augue massa cursus. Sed quisque velit,
+                                    auctor at lobortis hac tincidunt sodales id. Elit malesuada vel risus, in enim
+                                    sagittis at. Netus sagittis collevita aliquet urna quis.</p>
+                            </div>
+                            <div class="precio-producto">
+                                <span>12.50 €</span>
+                            </div>
+                            <div class="acciones-producto">
+                                <button class="btn small-button">Añadir al carrito</button>
+                                <div class="iconos-acciones">
+                                    <a href="#favorito"><i class="far fa-heart"></i></a>
+                                    <a href="#compartir"><i class="fas fa-share-alt"></i></a>
+                                    <a href="#mas-info"><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="producto-card">
+                        <div class="imagen-producto">
+                            <img loading="lazy" src="assets/img/manos_con_barro.png" alt="Persona trabajando con barro">
+                        </div>
+                        <div class="detalles-producto">
+                            <div class="categorias">
+                                <a href="#jarrones">Jarrones</a>
+
+                                <a href="#diseño-moderno">Diseño Moderno</a>
+                            </div>
+                            <div class="info-producto">
+                                <h4>LÍNEA IKEA</h4>
+                                <h3>Taza ikea nº2</h3>
+                                <p>LOREM IPSUM</p>
+                                <p>Sagittis, eu pretium massa quisque cursus augue massa cursus. Sed quisque velit,
+                                    auctor at lobortis hac tincidunt sodales id. Elit malesuada vel risus, in enim
+                                    sagittis at. Netus sagittis collevita aliquet urna quis.</p>
+                            </div>
+                            <div class="precio-producto">
+                                <span>12.50 €</span>
+                            </div>
+                            <div class="acciones-producto">
+                                <button class="btn small-button">Añadir al carrito</button>
+                                <div class="iconos-acciones">
+                                    <a href="#favorito"><i class="far fa-heart"></i></a>
+                                    <a href="#compartir"><i class="fas fa-share-alt"></i></a>
+                                    <a href="#mas-info"><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Sección de contacto-->
+    <section class="contacto" id="contacto">
+        <div class="contenedor">
+            <h2>Contacta con nosotros</h2>
+            <form class="formulario-contacto">
+                <div class="fila-formulario">
+                    <div class="grupo-formulario">
+                        <label for="nombre">Nombre*</label>
+                        <input type="text" id="nombre" required>
+                        <small class="obligatorio">Campo obligatorio</small>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="telefono">Teléfono*</label>
+                        <input type="tel" id="telefono" required>
+                        <small class="obligatorio">Campo obligatorio</small>
+                    </div>
+                </div>
+                <div class="fila-formulario">
+                    <div class="grupo-formulario">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" required>
+                        <small class="obligatorio">Campo obligatorio</small>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto">
+                        <small class="opcional">*Campos obligatorios</small>
+                    </div>
+                </div>
+                <div class="grupo-formulario ancho-completo">
+                    <label for="mensaje">Mensaje*</label>
+                    <textarea id="mensaje" rows="4" placeholder="Quiero información sobre los cursos..."
+                        required></textarea>
+                    <small class="obligatorio">Campo obligatorio</small>
+                </div>
+                <div class="boton-formulario">
+                    <button class="btn" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    </main>
+
+    <!-- El footer contiene dirección y acceso a las redes sociales-->
+    <footer>
+        <div class="contenedor">
+            <div class="contenedor-footer">
+                <div class="info-footer">
+                    <h3>Manos al Barro</h3>
+                    <p>C/ Lorem ipsum 23</p>
+                    <p>34567 Roma</p>
+                </div>
+                <div class="contacto-footer">
+                    <p>Teléfono:<br>456985896</p>
+                    <p>E-Mail:<br>contacto@manosalbarro.es</p>
+                </div>
+            </div>
+            <div class="redes-sociales">
+                <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

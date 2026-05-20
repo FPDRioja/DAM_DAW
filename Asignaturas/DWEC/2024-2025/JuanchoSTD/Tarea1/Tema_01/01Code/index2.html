@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Demo: tu primer código JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		/* Estilos base para móvil */
+		body {
+			margin: 0;
+			padding: 15px;
+			font-family: Arial, sans-serif;
+		}
+
+		h1 {
+			font-size: 24px;
+			color: #35b148;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.4;
+		}
+
+		/* Tablet */
+		@media (min-width: 768px) {
+			body {
+				padding: 30px;
+				max-width: 700px;
+				margin: 0 auto;
+			}
+
+			h1 {
+				font-size: 32px;
+				color: #1924bc;
+			}
+
+			p {
+				font-size: 18px;
+			}
+		}
+
+		/* Ordenador */
+		@media (min-width: 1024px) {
+			body {
+				max-width: 900px;
+			}
+			h1 {
+				font-size: 32px;
+				color: #eb790e;
+			}
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<h1>Demo: tu primer código JavaScript </h1>
+	<p>En este primer ejemplo puedes ver cómo incluir un archivo js externo en nuestra web.</p>
+	<p>Pulsa el botón derecho de tu ratón en esta web y "Ver código fuente de esta página", ahora fíjate cómo la
+		etiqueta "script" hace referencia la archivo "primer-javascript.js", como si se tratara de un css externo.</p>
+	<p>Pulsa encima de "primer-javascript.js" y verás tu pimer código JavaScript.</p>
+	<p>Esta primera web muestra el mensaje "Prueba de JavaScript" en un cuadro de alerta cuando carga la página.</p>
+	<p>Intenta analizar el orden de ejecución del código.</p>
+	<p>Observa cómo muestra el mensaje antes de "pintar" la página y cómo cuando le das a "aceptar" continúa
+		renderizando el html</p>
+	<p>Pulsa F5 para recargar la página y comprobar otra vez el orden de ejecución</p>
+	<script src="js/primer-javascript.js">
+	</script>
+	<h2>Después de JavaScript</h2>
+	<p id="demo"></p>
+
+</body>
+
+</html>

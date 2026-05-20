@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batallitas Pokémon</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/jugador.js"></script>
+    <script src="js/partida.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <h1>Batallitas Pokémon</h1>
+
+    <div class="tablero-juego">
+        <div class="jugadores-superiores">
+            <!-- Jugador Izquierda (AJAX) -->
+            <div class="area-jugador jugador-izquierda">
+                <h2>Jugador Izquierda (AJAX)</h2>
+                <div id="mano-izquierda" class="mano-jugador">
+                    <!-- Las cartas se cargarán aquí -->
+                    <div class="cargando">Esperando a comienzo de partida...</div>
+                </div>
+            </div>
+
+            <!-- Jugador Derecha (fetch) -->
+            <div class="area-jugador jugador-derecha">
+                <h2>Jugador Derecha (Fetch)</h2>
+                <div id="mano-derecha" class="mano-jugador">
+                    <!-- Las cartas se cargarán aquí -->
+                    <div class="cargando">Esperando a comienzo de partida...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zona Central -->
+        <div class="area-central">
+            <div id="arena-batalla" class="arena-batalla">
+                <h2>Arena de Batalla</h2>
+                <!-- Cartas seleccionadas para la batalla -->
+            </div>
+            <div id="estado-juego" class="estado-juego">
+                Esperando inicio del juego...
+            </div>
+            <button id="btn-comenzar-partida">Comenzar Partida!</button>
+            <button id="btn-siguiente-batalla">Siguiente Batalla</button>
+            <button id="btn-resolver-batalla">Resolver Batalla</button>
+        </div>
+
+        <!-- Jugador Abajo (jQuery) -->
+        <div class="area-jugador jugador-abajo">
+            <h2>Jugador Abajo (jQuery)</h2>
+            <div id="mano-abajo" class="mano-jugador">
+                <!-- Las cartas se cargarán aquí -->
+                <div class="cargando">Esperando a comienzo de partida...</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

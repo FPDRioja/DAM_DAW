@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<!-- Elimino el carácter php, lo realizo todo desde js en este apartado-->
+<head>
+  <meta charset="utf-8">
+  <title>Crear nuevo producto</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.onload = function () {
+      const formulario = document.getElementById('formulario');
+      const pMensaje = document.getElementById('mensaje');
+
+      fetch('../servidor/familiaREST.php')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+          }
+          return response.json();
+        }).then(familias => {
+          let familiasSelect = document.getElementById('select_familias');
+          familias.forEach(f => {
+            familiasSelect.innerHTML += `
+                            echo "<option value='${f.cod}'>${f.nombre}</option>";
+                        `;
+          });
+          //Añadimos el evet listener ahora que ya tenemos los datos necesarios
+          formulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(formulario);
+            fetch('../servidor/productoREST.php', {
+              method: 'POST',
+              body: formData
+            }).then(response => {
+              if (!response.ok) {
+                throw new Error(`Error HTTP: ${response.status}`);
+              }
+              return response.text();
+            }).then(mensaje => {
+              pMensaje.textContent = mensaje;
+            }).catch((err) => {
+              pMensaje.style.color = 'red';
+              pMensaje.textContent = 'Error: ' + err;
+            });
+          });
+        }).catch((err) => {
+          pMensaje.style.color = 'red';
+          pMensaje.textContent = 'Error: ' + err;
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Crear nuevo producto</h1>
+  <form method="POST" id='formulario'>
+    <p>Nombre: <input type="text" name="nombre" required></p>
+    <p>Nombre corto: <input type="text" name="nombre_corto" required></p>
+    <p>Descripción: <textarea name="descripcion"></textarea></p>
+    <p>Precio (PVP): <input type="number" step="0.01" name="pvp" min="0.01" required></p>
+    <p>Familia:
+      <select name="familia" id='select_familias' required>
+      </select>
+    </p>
+    <p><input type="submit" value="Crear"></p>
+  </form>
+  <p id='mensaje'></p>
+  <p><a href='listado.html'> <input type='button' value='Volver al listado' class='boton'></a>
+
+</body>
+
+</html>

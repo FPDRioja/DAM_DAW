@@ -1,0 +1,4 @@
+create table alumnos(
+  nif varchar(9) PRIMARY KEY,
+  nombre varchar(40)
+);

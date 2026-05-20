@@ -1,0 +1,50 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background-color: #e0f7fa; /* Azul claro */
+}
+
+h1, h1 a {
+    color: #00796b; /* Verde azulado oscuro */
+}
+
+.controles, .informacion {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #b2ebf2; /* Azul claro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.controles label, .controles input, .controles button {
+    margin-right: 10px;
+}
+
+#cuadricula {
+    display: grid;
+    border: 1px solid #004d40; /* Verde azulado muy oscuro */
+    background-color: #eee;
+}
+
+.celula {
+    width: 15px; /* Tamaño base de la célula */
+    height: 15px; /* Tamaño base de la célula */
+    background-color: #fff; /* Célula muerta */
+    border: 1px solid #80deea; /* Cian claro */
+    box-sizing: border-box; /* Incluir borde en el tamaño */
+}
+
+.celula.viva {
+    background-color: #004d40; /* Verde azulado muy oscuro */
+}
+
+#mensaje-estabilizacion {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}

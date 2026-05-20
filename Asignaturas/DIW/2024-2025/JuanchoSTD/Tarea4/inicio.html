@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Manos al Barro</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.getElementById('menu-principal').classList.toggle('activo');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- El header contiene menu, logo y carrito-->
+    <header>
+        <div class="contenedor contenedor-cabecera">
+            <div class="menu-hamburguesa" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Manos al Barro">
+            </div>
+            <nav>
+                <ul class="menu" id="menu-principal">
+                    <li><a class="activo" href="inicio.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="">Talleres</a></li>
+                    <li><a href="">Quienes somos</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Principal-->
+    <main>
+        <!-- sección de presentacion cabecera, img , titulo etc-->
+        <section class="cabecera">
+            <h1>Manos al Barro</h1>
+            <p>Lorem ipsum dolor sit amet consectetur. Egestas morbi turpis condimentum .</p>
+
+        </section>
+
+        <div class="introduccion">
+            <p>Lorem ipsum dolor sit amet consectetur. Praesent diam consectetur pulvinar magnis orci. Turpis a habitant
+                magna lectus vel hac id pharetra vitae. Tempus facilisi lectus eget elit nulla tempor. Porta leo
+                tincidunt iaculis faucibus hendrerit. Sit eu tincidunt mi pellentesque ipsum tortor. Mauris dolor
+                fringilla maecenas sed.</p>
+            <a href="" class="btn">Conócenos</a>
+        </div>
+        <!-- Sección de presentación de la tienda-->
+        <section class="productos" id="tienda">
+            <div class="contenedor">
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img src="assets/img/tienda1.png" alt="Cerámica decorativa">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Conoce</h3>
+                        <h2>Nuestros productos</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sed consectetur sed phasellus adipiscing eget.
+                            Dolor eros tortor massa amet integer amet vestibulum convallis. Laoreet eget neque
+                            viverra sed. Turpis pretium eleifend sed odio mauris.</p>
+                        <a href="tienda.html" class="btn">IR A LA TIENDA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de presentación de los cursos y talleres-->
+        <section class="talleres" id="talleres">
+            <div class="contenedor">
+                <div class="contenedor-taller">
+                    <div class="info-taller">
+                        <h3>Visita</h3>
+                        <h2>Nuestros talleres</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sed consectetur sed phasellus adipiscing eget.
+                            Dolor eros tortor massa amet integer amet vestibulum convallis. Laoreet eget neque
+                            viverra sed. Turpis pretium eleifend sed odio mauris.</p>
+                        <a href="" class="btn">VER CURSOS Y TALLERES</a>
+                    </div>
+                    <div class="imagen-taller">
+                        <img src="assets/img/taller1.png" alt="Manos trabajando con barro">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto-->
+        <section class="contacto" id="contacto">
+            <div class="contenedor">
+                <h2>Contacta con nosotros</h2>
+                <form class="formulario-contacto">
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" id="nombre" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="telefono">Teléfono*</label>
+                            <input type="tel" id="telefono" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                    </div>
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto">
+                            <small class="opcional">*Campos obligatorios</small>
+                        </div>
+                    </div>
+                    <div class="grupo-formulario ancho-completo">
+                        <label for="mensaje">Mensaje*</label>
+                        <textarea id="mensaje" rows="4" placeholder="Quiero información sobre los cursos..."
+                            required></textarea>
+                        <small class="obligatorio">Campo obligatorio</small>
+                    </div>
+                    <div class="boton-formulario">
+                        <button class="btn" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- El footer contiene dirección y acceso a las redes sociales-->
+    <footer>
+        <div class="contenedor">
+            <div class="contenedor-footer">
+                <div class="info-footer">
+                    <h3>Manos al Barro</h3>
+                    <p>C/ Lorem ipsum 23</p>
+                    <p>34567 Roma</p>
+                </div>
+                <div class="contacto-footer">
+                    <p>Teléfono:<br>456985896</p>
+                    <p>E-Mail:<br>contacto@manosalbarro.es</p>
+                </div>
+            </div>
+            <div class="redes-sociales">
+                <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

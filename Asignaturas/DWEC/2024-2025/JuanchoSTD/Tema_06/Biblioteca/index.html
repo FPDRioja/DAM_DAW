@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <script src="js/clases.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contenedor {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contenedor_lector {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .contenedor_libros {
+            flex: 2;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4070f4;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .mensajes-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 150px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+
+        .lectores {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .biblioteca_libros {
+            height: 600px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .lector-item,
+        .copia-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .contenedor-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .lector-item {
+            width: 32%;
+            box-sizing: border-box;
+        }
+
+        .copia-item {
+            width: 24%;
+            box-sizing: border-box;
+        }
+
+        .lector-seleccionado {
+            background-color: #e6f7ff;
+            border-color: #1890ff;
+        }
+
+        .copia-prestada {
+            background-color: #ffeeee;
+            border-color: #ffaaaa;
+        }
+
+        .copia-mal-estado {
+            background-color: #fffbee;
+            border-color: #e6d18a;
+        }
+
+        .prestamo-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .prestamo-retrasado {
+            background-color: #ffeeee;
+            border-color: #ffaaaa;
+        }
+
+        .multa-item {
+            border: 1px solid #ffaaaa;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #fff6f6;
+        }
+
+        .mensaje-error {
+            color: rgb(189, 39, 39);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gestión de préstamos de la biblioteca</h1>
+    <div class="contenedor">
+        <div class="contenedor_lector">
+            <div class="lector_actual">
+                <h3>Lector actual:</h3>
+
+            </div>
+            <div class="lector_actual_multar">
+                <button id="btn-multar">Multar</button>
+            </div>
+            <div class="lector_actual_prestamos">
+                <h2>Préstamos del lector actual</h2>
+                <div class="contenedor-flex prestamos-flex">
+
+                </div>
+            </div>
+            <div class="lector_actual_multas_activas">
+                <h2>Multas</h2>
+                <div class="contenedor-flex multas-flex">
+
+                </div>
+            </div>
+        </div>
+        <div class="contenedor_libros">
+            <div class="lectores">
+                <h2>Lectores</h2>
+                <div class="contenedor-flex lectores-flex">
+
+                </div>
+            </div>
+            <div class="biblioteca_libros">
+                <h2>Copias Disponibles</h2>
+                <div class="contenedor-flex copias-flex">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mensajes -->
+    <div class="mensajes-container"></div>
+</body>
+
+</html>

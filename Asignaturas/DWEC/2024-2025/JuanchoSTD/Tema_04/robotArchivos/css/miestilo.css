@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 0.3rem;
+}
+
+h2,h3 {
+    text-align: center;
+    color: darkorange;
+    border-bottom: 1px solid darkorange;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+a {
+     color: darkorange;
+}
+
+div {
+    padding: 2rem;
+}
+
+
+
+div.derecha {
+    width: 40%;
+    float: right;
+}
+
+div.izquierda {
+    width: 60%;
+    float: left;
+    border-right: 1px solid darkorange;
+}
+
+section{
+    border: 1px solid black;
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 1rem;
+}
+
+div.boton{
+    padding: 0;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+    
+}
+
+button{
+    padding: 0.3rem;
+    background-color: darkorange;
+    border: none;
+}
+
+h3{
+    margin-bottom: 0.3rem;
+    margin-top: 1rem;
+}

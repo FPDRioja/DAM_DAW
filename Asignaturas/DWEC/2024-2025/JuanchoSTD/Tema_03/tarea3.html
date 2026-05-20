@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Personal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            transition: background-color 0.5s ease;
+        }
+        form, .events-container {
+            margin-bottom: 20px;
+        }
+        .event-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .event-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        #fecha-hora-actual {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+
+    <h1>Agenda Personal</h1>
+    <!-- Div para mostrar la fecha y hora actual -->
+    <div id="fecha-hora-actual"></div>
+    <!-- Formulario para agregar eventos -->
+    <form id="form-agregar-evento">
+        <label for="titulo">Título del evento:</label>
+        <input type="text" id="titulo" required><br><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion"><br><br>
+
+        <label for="fecha-hora">Fecha y hora:</label>
+        <input type="datetime-local" id="fecha-hora" required><br><br>
+
+        <button type="submit">Añadir Evento</button>
+    </form>
+
+    <!-- Botones de acciones -->
+    <button id="mostrar-eventos">Mostrar Eventos</button>
+    <button id="borrar-evento">Borrar Evento</button>
+
+    <!-- Contenedor para mostrar los eventos -->
+    <div id="eventos-container" class="events-container"></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Listado de Productos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    window.onload = function () {
+      let tabla = document.getElementById('tabla');
+      fetch('../servidor/productoREST.php')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+          }
+          return response.json();
+        }).then(json => {
+          json.forEach(p => {
+            tabla.innerHTML += `
+            <tr>
+              <td><a href="detalle.php?id=${p.id}"> <input type="button" value="Detalle" class="boton"></a></td>
+              <td>${p.id}</td>
+              <td>${p.nombre}</td>
+              <td><a href="update.php?id=${p.id}"> <input type="button" value="Editar" class="boton"></a></td>
+              <td>
+                <form action="borrar.php" method="POST" class="form_solo_boton" onsubmit="return confirm('De verdad?');">
+                  <input type="hidden" name="id" value="${p.id}">
+                  <input type="submit" value="Borrar" class="boton">
+                </form>
+              </td>
+            </tr>
+          `;
+
+          });
+        }).catch((err) => {
+          pMensaje.textContent = 'Error: ' + err;
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Listado de Productos</h1>
+  <p>
+    <a href="crear.html" class="boton">Crear nuevo producto</a>
+  </p>
+  <table id='tabla' border="1">
+    <tr>
+      <th>Detalle</th>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th colspan="2">Acciones</th>
+    </tr>
+
+  </table>
+</body>
+
+</html>

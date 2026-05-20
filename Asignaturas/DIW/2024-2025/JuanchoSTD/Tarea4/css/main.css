@@ -1,0 +1,588 @@
+/* Fuentes, de https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+/* Variables de colores y fuentes */
+:root {
+    /* Paleta de colores definida en figma */
+    --color-claro: #FEFAE0;
+    --color-medio: #DDA15E;
+    --color-oscuro: #585123;
+    --color-resaltado: #6CD4FF;
+    --color-fondo: #DCDCBE;
+    --color-texto: #433c11;
+    --color-blanco: #ffffff;
+    --color-negro: #000000;
+
+    --radio-borde: 4px;
+    --transicion: all 0.5s;
+}
+
+/**
+ Móvil primero
+**/
+
+
+/* Reset básico recomendado, así controlo yo siempre el margen y el relleno*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Estructura de contenedor */
+.contenedor {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+/* Estilo de botones */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    background-color: var(--color-resaltado);
+    color: var(--color-blanco);
+    text-decoration: none;
+    border-radius: var(--radio-borde);
+    transition: var(--transicion);
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Estilo hover para botones */
+.btn:hover {
+    background-color: var(--color-resaltado);
+    box-shadow: 0 0 0 10px rgba(108, 212, 255, 0.3), 0 4px 10px var(--color-texto);
+}
+
+/* cabecera y navegación */
+header {
+    background-color: var(--color-claro);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.contenedor-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo centrado en móvil y tablet */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    max-height: 40px;
+}
+
+/* Menú hamburguesa en móvil y tablet */
+.menu-hamburguesa {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--color-oscuro);
+    transition: var(--transicion);
+}
+
+.menu-hamburguesa:hover {
+    color: var(--color-resaltado);
+}
+
+/* Menú principal para escritorio */
+.menu {
+    display: none;
+    /*Por defecto no se ve*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-claro);
+    padding: 0.5rem 0;
+}
+
+/* al poner esta clase desde js se activará el menú (para escritorio)*/
+.menu.activo {
+    display: block;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--color-oscuro);
+    text-decoration: none;
+    transition: var(--transicion);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu a:hover {
+    background-color: var(--color-blanco);
+}
+
+.menu a.activo {
+    background-color: var(--color-oscuro);
+    color: var(--color-blanco);
+}
+
+.carrito a {
+    font-size: 1.25rem;
+    color: var(--color-oscuro);
+    transition: var(--transicion);
+}
+
+.carrito a:hover {
+    color: var(--color-resaltado);
+}
+
+/* Cabecera de la home con su imagen de fondo */
+.cabecera {
+    background-image: url('../assets/img/Imagen_cabecera.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 1rem;
+    text-align: center;
+    color: var(--color-blanco);
+    position: relative;
+    min-height: 500px;
+
+}
+
+/* Contenido de la cabecera por encima del overlay */
+.cabecera h1,
+.cabecera p,
+.cabecera .introduccion {
+    position: relative;
+    z-index: 2;
+}
+
+.cabecera h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2.5rem;
+    margin: 3rem;
+    color: var(--color-medio);
+}
+
+/* INtroduccion */
+.introduccion {
+    background-color: var(--color-claro);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.introduccion p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.introduccion .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Estilos comunes para las secciones de contenido */
+
+.productos, .talleres {
+    padding: 0;
+    background-color: var(--color-fondo);
+
+}
+.contenedor-producto, .contenedor-taller {
+    background-color: var(--color-claro);
+    border-radius: var(--radio-borde);
+    margin-bottom: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Imágenes de productos y talleres */
+.imagen-producto img, .imagen-taller img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.info-producto, .info-taller {
+    padding: 1.5rem;
+    text-align: center;
+}
+.info-producto h2, .info-taller h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: var(--color-oscuro);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+.info-producto h3, .info-taller h3 {
+    color: var(--color-resaltado);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.info-producto p, .info-taller p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Contacto y footer */
+.contacto {
+    padding: 3rem 1rem;
+    background-color: var(--color-claro);
+    margin-top: 2rem;
+}
+
+.contacto h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: var(--color-oscuro);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.formulario-contacto {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-oscuro);
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radio-borde);
+    font-family: 'Roboto', sans-serif;
+}
+
+.grupo-formulario textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.obligatorio, .opcional {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.obligatorio {
+    color: #d9534f;
+    display: none;
+}
+
+.opcional {
+    color: #777;
+    text-align: right;
+}
+
+.ancho-completo {
+    width: 100%;
+}
+
+.boton-formulario {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-oscuro);
+    color: var(--color-claro);
+    padding: 2rem 0;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.info-footer h3 {
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 1rem;
+}
+
+.contacto-footer p {
+    
+    margin-bottom: 1rem;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.redes-sociales a {
+
+    color: var(--color-claro);
+    font-size: 1.5rem;
+    transition: var(--transicion);
+}
+
+.redes-sociales a:hover {
+    color: var(--color-resaltado);
+}
+
+/****
+
+Media queries
+
+****/
+
+/* Media query para tablets 768px */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .contenedor {
+        max-width: 960px;
+
+    }
+
+    /* Cabecera para tablet */
+    .cabecera h1 {
+        font-size: 3.7rem;
+    }
+    .introduccion p{
+        font-size: 1.2rem;
+    }
+
+    .info-producto h2, .info-taller h2 {
+        font-size: 2.2rem;
+    }
+    
+    .info-producto p, .info-taller p {
+        font-size: 1.1rem;
+    }
+
+    .contenedor-producto, .contenedor-taller {
+        display: flex;
+        align-items: center;
+    }
+    
+    .contenedor-producto .imagen-producto {
+        order: 1;
+        flex: 1;
+    }
+    
+    .contenedor-producto .info-producto {
+        order: 2;
+        flex: 1;
+        text-align: left;
+        padding: 2rem 3rem;
+    }
+    
+    .contenedor-taller .imagen-taller {
+        order: 2;
+        flex: 1;
+    }
+    
+    .contenedor-taller .info-taller {
+        order: 1;
+        flex: 1;
+        text-align: left;
+        padding: 2rem 3rem;
+    }
+    .contenedor-producto .imagen-producto,
+    .contenedor-producto .info-producto,
+    .contenedor-taller .imagen-taller,
+    .contenedor-taller .info-taller {
+        width: 50%; 
+        flex: none; /* hay que quitar esto para garantizar el ancho */
+    }
+    .contenedor-taller .info-taller {
+        text-align: right; 
+    }
+    
+    .contenedor-taller .btn {
+        margin-left: auto; 
+        display: table; 
+    }
+
+
+    .contacto h2 {
+        font-size: 2.2rem;
+    }
+    
+    .fila-formulario {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .fila-formulario .grupo-formulario {
+        flex: 1;
+    }
+    
+    .contenedor-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Media query para escritorio 1200px  */
+@media (min-width: 1200px) {
+    .contenedor {
+        max-width: 1140px;
+    }
+
+    /* recolocar logo en escritorio */
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    /* Ocultar menú hamburguesa en escritorio */
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    /* Mostrar menú horizontal solo en escritorio */
+    .menu {
+        display: flex;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .menu li {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .menu a {
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+        color: var(--color-resaltado);
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    /* Hover simple para escritorio, solo cambia el color */
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--color-medio);
+    }
+
+    /* activo denota la página en la que estoy */
+    .menu a.activo {
+        background-color: transparent;
+        color: var(--color-oscuro);
+        font-weight: bold;
+        border-bottom: 2px solid var(--color-resaltado);
+    }
+
+    /* Cabecera para escritorio */
+    .cabecera {
+        padding: 6rem 1rem;
+    }
+
+    .cabecera h1 {
+        font-size: 5rem;
+    }
+    .introduccion p{
+        font-size: 1.4rem;
+    }
+
+    .contenedor-producto, .contenedor-taller {
+        display: flex;
+        align-items: center;
+    }
+    
+    .contenedor-producto .imagen-producto {
+        order: 1;
+        flex: 1;
+        
+    }
+    
+    .contenedor-producto .info-producto {
+        order: 2;
+        flex: 1;
+        text-align: left;
+        padding: 2rem 3rem;
+    }
+    
+    .contenedor-taller .imagen-taller {
+        order: 2;
+        flex: 1;
+    }
+    
+    .contenedor-taller .info-taller {
+        order: 1;
+        flex: 1;
+        text-align: left;
+        padding: 2rem 3rem;
+    }
+    
+    .info-producto h2, .info-taller h2 {
+        font-size: 2.5rem;
+    }
+    
+    .info-producto p, .info-taller p {
+        font-size: 1.2rem;
+    }
+    .contenedor-producto .imagen-producto,
+    .contenedor-producto .info-producto,
+    .contenedor-taller .imagen-taller,
+    .contenedor-taller .info-taller {
+        width: 50%; 
+        flex: none; /* hay que quitar esto para garantizar el ancho */
+    }
+    .contenedor-taller .info-taller {
+        text-align: right; 
+    }
+    
+    .contenedor-taller .btn {
+        margin-left: auto; 
+        display: table; 
+    }
+    .contacto h2 {
+        font-size: 2.5rem;
+    }
+    
+    .fila-formulario {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .fila-formulario .grupo-formulario {
+        flex: 1;
+    }
+    
+    .contenedor-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    
+    .redes-sociales {
+        margin-top: 2rem;
+    }
+}
+

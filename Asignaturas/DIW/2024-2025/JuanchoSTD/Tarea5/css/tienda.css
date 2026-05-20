@@ -1,0 +1,242 @@
+.tienda-cabecera {
+    background-image: url('../assets/img/cabecera_tienda.png');
+}
+
+/* Formulario de búsqueda */
+.busqueda-productos {
+    padding: 3rem 1rem;
+    background-color: var(--color-claro);
+}
+
+ h2 {
+    font-family: 'Libre Baskerville', serif;
+    color: var(--color-oscuro);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.formulario-busqueda {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-oscuro);
+}
+
+/* Estilos de componentes*/
+.grupo-formulario input,
+.grupo-formulario select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--radio-borde);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estilo para el slider de rango */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.slider-container input {
+    flex: 1;
+}
+
+/* Estilo para checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.checkbox-container input {
+    margin-right: 0.5rem;
+}
+
+/* Lista de productos */
+.lista-productos {
+    padding: 3rem 0;
+    background-color: var(--color-fondo);
+}
+
+/* Grid de productos  */
+.grid-productos {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.producto-card {
+    background-color: var(--color-claro);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transicion);
+    cursor: pointer;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px); /*Sencillo y chulo*/
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card .imagen-producto {
+    height: 400px; 
+    overflow: hidden;
+}
+
+.producto-card .imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detalles-producto {
+    padding: 1rem; 
+}
+
+
+.categorias {
+    margin-bottom: 0.8rem; 
+    font-size: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.categorias a {
+    color: var(--color-blanco);
+    background-color: var(--color-resaltado);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+    transition: var(--transicion);
+}
+
+.categorias a:hover {
+    background-color: var(--color-medio);
+}
+
+.categorias span {
+    color: var(--color-medio);
+    display: inline-block;
+    margin: 0 0.2rem;
+}
+
+.info-producto h4 {
+    color: var(--color-medio);
+    font-size: 0.8rem; 
+    margin-bottom: 0.2rem; 
+}
+
+.info-producto h3 {
+    color: var(--color-oscuro);
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 0.7rem; 
+    font-size: 1.4rem; 
+}
+
+.info-producto p {
+    margin-bottom: 0.7rem; 
+    font-size: 0.8rem; 
+    line-height: 1.4; 
+}
+
+.precio-producto {
+    font-weight: bold;
+    font-size: 1.1rem; 
+    margin: 0.7rem 0; 
+    color: var(--color-oscuro);
+}
+
+.acciones-producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.7rem; 
+}
+
+.small-button {
+    padding: 0.4rem 0.8rem; 
+    font-size: 0.7rem; 
+}
+
+.iconos-acciones {
+    display: flex;
+    gap: 0.8rem; 
+}
+
+.iconos-acciones a {
+    color: var(--color-oscuro);
+    font-size: 1.1rem; 
+}
+
+/********
+Media queries
+*********/
+
+/* Media query para tablets y escritorio */
+@media (min-width: 768px) {
+    .busqueda-productos h2 {
+        font-size: 2.2rem;
+    }
+   
+    .fila-formulario {
+        display: flex;
+        gap: 1.5rem;
+    }
+    .fila-formulario .grupo-formulario {
+        flex: 1;
+    }
+}
+/* Media query para tablets solo */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media query para escritorio */
+@media (min-width: 1200px) {
+    .busqueda-productos h2 {
+        font-size: 2.5rem;
+    }
+    
+    .fila-formulario {
+        gap: 2rem;
+    }
+    
+    .grid-productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+   
+    .contenedor {
+        padding: 0 2rem;
+    }
+}
+
+/* Aún más para los más grandes*/
+@media (min-width: 1800px) {
+    
+    .grid-productos {
+        grid-template-columns: repeat(4, 1fr); /* == fr fr fr fr*/
+    }
+    .contenedor {
+        max-width: 80%;
+    }
+}

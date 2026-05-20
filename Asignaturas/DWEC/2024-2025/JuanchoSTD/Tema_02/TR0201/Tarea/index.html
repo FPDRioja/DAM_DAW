@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejercicios DWEC">
+    <title>Título de la página</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    
+    <main>
+        <h1>Tema 2, Desarrollo web en cliente. Juan Cruz Garrido. </h1>
+        <h3>Los botones llaman a los ejercicios con propmts.</h3>
+    </main>
+    <button onclick="ejercicio1()">Ejercicio 1</button>
+    <button onclick="ejercicio2()">Ejercicio 2</button>
+    <button onclick="ejercicio3()">Ejercicio 3</button>
+    <button onclick="ejercicio4()">Ejercicio 4</button>
+    <button onclick="ejercicio5()">Ejercicio 5</button>
+    <button onclick="ejercicio6()">Ejercicio 6</button>
+    <button onclick="ejercicio7()">Ejercicio 7</button>
+    <button onclick="ejercicio8()">Ejercicio 8</button>
+    <button onclick="ejercicio9()">Ejercicio 9</button>
+
+    <script src="js/main.js"></script>
+    <script>
+        function escribeSubtitulo(ejercicio){
+            document.write(`<h2>${ejercicio}</h2>`);
+        }
+        function escribeCaso(nombreMetodoEjercicio, parametros, resultado){
+            document.write(`<div>
+                 <span> Función:  ${nombreMetodoEjercicio}</span> <br>
+                 <span> Parámetros: ${parametros} </span> <br>
+                 <span> Resultado: ${resultado} </span>
+                 </div>`);
+        }
+        function separarBloque(){
+            document.write(`<hr>`);
+        }
+        // Pruebas de esPalindromo
+        escribeSubtitulo("Ejercicio 1");
+        escribeCaso("esPalindromo", "'Allí ves a Sevilla'", esPalindromo("Allí ves a Sevilla"));
+        escribeCaso("esPalindromo", "'Ana lava lana'", esPalindromo("Ana lava lana"));
+        escribeCaso("esPalindromo", "'No es palíndromo'", esPalindromo("No es palíndromo"));
+        separarBloque()
+
+        // Pruebas de obtenerIniciales
+        escribeSubtitulo("Ejercicio 2");
+        escribeCaso("obtenerIniciales", "'John Doe'", obtenerIniciales("John Doe"));
+        escribeCaso("obtenerIniciales", "'Alice Johnson Smith'", obtenerIniciales("Alice Johnson Smith"));
+        escribeCaso("obtenerIniciales", "'Juan Cruz Garrido Suso'", obtenerIniciales("Juan Cruz Garrido Suso"));
+        separarBloque()
+        
+        // Pruebas de revertirPalabras
+        escribeSubtitulo("Ejercicio 3");
+        escribeCaso("revertirPalabras", "'Hola, cómo estás'", revertirPalabras("Hola, cómo estás"));
+        escribeCaso("revertirPalabras", "'JavaScript es increíble'", revertirPalabras("JavaScript es increíble"));
+        escribeCaso("revertirPalabras", "'El día está soleado'", revertirPalabras("El día está soleado"));
+        separarBloque()
+
+        // Pruebas de desplazarLetra
+        escribeSubtitulo("Ejercicio 4");
+        escribeCaso("desplazarLetra", "'Desarrollo'", desplazarLetra("Desarrollo"));
+        escribeCaso("desplazarLetra", "'Hola'", desplazarLetra("Hola"));
+        escribeCaso("desplazarLetra", "'JavaScript'", desplazarLetra("JavaScript"));
+        separarBloque()
+
+        // Pruebas de contarVocales
+        escribeSubtitulo("Ejercicio 5");
+        escribeCaso("contarVocales", "'El rápido zorro marrón'", contarVocales("El rápido zorro marrón"));
+        escribeCaso("contarVocales", "'JavaScript'", contarVocales("JavaScript"));
+        escribeCaso("contarVocales", "'Murciélago'", contarVocales("Murciélago"));
+        separarBloque()
+
+        // Pruebas de obtenerTipo
+        escribeSubtitulo("Ejercicio 6");
+        escribeCaso("obtenerTipo", "123", obtenerTipo(123));
+        escribeCaso("obtenerTipo", "'texto'", obtenerTipo("texto"));
+        escribeCaso("obtenerTipo", "true", obtenerTipo(true));
+        separarBloque()
+
+        // Pruebas de cantidadMonedas
+        escribeSubtitulo("Ejercicio 7");
+        escribeCaso("cantidadMonedas", "46, [25, 10, 5, 2, 1]", cantidadMonedas(46, [25, 10, 5, 2, 1]));
+        escribeCaso("cantidadMonedas", "143, [50, 25, 10, 5, 2, 1]", cantidadMonedas(143, [50, 25, 10, 5, 2, 1]));
+        escribeCaso("cantidadMonedas", "31, [25, 10, 5, 2, 1]", cantidadMonedas(31, [25, 10, 5, 2, 1]));
+        separarBloque()
+
+        // Pruebas de extraerDominio
+        escribeSubtitulo("Ejercicio 8");
+        escribeCaso("extraerDominio", "'usuario@example.com'", extraerDominio("usuario@example.com"));
+        escribeCaso("extraerDominio", "'test@gmail.com'", extraerDominio("test@gmail.com"));
+        escribeCaso("extraerDominio", "'info@empresa.es'", extraerDominio("info@empresa.es"));
+        separarBloque()
+
+        // Pruebas de generarCadenaAleatoria
+        escribeSubtitulo("Ejercicio 9");
+        escribeCaso("generarCadenaAleatoria", "8", generarCadenaAleatoria(8));
+        escribeCaso("generarCadenaAleatoria", "12", generarCadenaAleatoria(12));
+        escribeCaso("generarCadenaAleatoria", "16", generarCadenaAleatoria(16));
+        separarBloque()
+
+    </script>   
+</body>
+
+</html>
+

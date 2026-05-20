@@ -1,0 +1,322 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+    color: #e3350d;
+}
+
+h2 {
+    color: #3b5ba8;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Tableros*/
+.tablero-juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    max-width: 1400px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    gap: 20px;
+}
+
+.jugadores-superiores {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+}
+
+.area-jugador {
+    border: 2px solid #ccc;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.jugador-izquierda,
+.jugador-derecha {
+    flex: 1;
+    min-height: 400px;
+    max-width: 48%;
+}
+
+.jugador-abajo {
+    width: 90%;
+    max-width: 1000px;
+}
+
+#mano-izquierda,
+#mano-derecha,
+#mano-abajo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    min-height: 180px;
+    padding: 5px;
+}
+
+.area-central {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#arena-batalla {
+    border: 2px dashed #e3350d;
+    padding: 20px;
+    min-height: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #fdf0e5;
+    border-radius: 10px;
+}
+
+#estado-juego {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 40px;
+    padding: 5px;
+    background-color: #eee;
+    width: 90%;
+}
+
+
+/*Cartas y btnes*/
+
+.carta-pokemon {
+    width: 100px;
+    border: 2px solid transparent;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.carta-pokemon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.carta-pokemon.seleccionable:hover {
+    border-color: #f8d030;
+}
+
+.carta-pokemon.seleccionada {
+    border-color: #e3350d;
+    box-shadow: 0 0 15px rgba(227, 53, 13, 0.7);
+    transform: scale(1.05);
+    cursor: default;
+}
+
+.carta-pokemon.deshabilitada {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.encabezado-carta,
+.estadisticas-carta {
+    background-color: #f2f2f2;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+.encabezado-carta {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.imagen-carta,
+.tipos-carta {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.imagen-carta {
+    background-color: #f8f8f8;
+}
+
+.imagen-carta img {
+    width: 70px;
+    height: 70px;
+    display: block;
+}
+
+.tipos-carta {
+    gap: 4px;
+    background-color: white;
+}
+
+.insignia-tipo {
+    padding: 2px 6px;
+    font-size: 0.7em;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.estadisticas-carta {
+    font-size: 0.7em;
+    padding: 3px;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
+button {
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#btn-comenzar-partida,
+#btn-siguiente-batalla,
+#btn-resolver-batalla {
+    padding: 10px 15px;
+    background-color: #3b5ba8;
+    color: white;
+    border: none;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2a4580;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+/* Detallitos */
+
+.cargando {
+    font-size: 1em;
+    margin: 20px;
+    color: #666;
+    width: 100%;
+    text-align: center;
+}
+
+.normal {
+    background-color: #A8A878;
+}
+
+.fire {
+    background-color: #F08030;
+}
+
+.water {
+    background-color: #6890F0;
+}
+
+.electric {
+    background-color: #F8D030;
+}
+
+.grass {
+    background-color: #78C850;
+}
+
+.ice {
+    background-color: #98D8D8;
+}
+
+.fighting {
+    background-color: #C03028;
+}
+
+.poison {
+    background-color: #A040A0;
+}
+
+.ground {
+    background-color: #E0C068;
+}
+
+.flying {
+    background-color: #A890F0;
+}
+
+.psychic {
+    background-color: #F85888;
+}
+
+.bug {
+    background-color: #A8B820;
+}
+
+.rock {
+    background-color: #B8A038;
+}
+
+.ghost {
+    background-color: #705898;
+}
+
+.dragon {
+    background-color: #7038F8;
+}
+
+.dark {
+    background-color: #705848;
+}
+
+.steel {
+    background-color: #B8B8D0;
+}
+
+.fairy {
+    background-color: #EE99AC;
+}
+
+
+#btn-comenzar-partida {
+    display: block;
+}
+
+#btn-siguiente-batalla,
+#btn-resolver-batalla {
+    display: none;
+}

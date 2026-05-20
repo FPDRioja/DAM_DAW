@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Vida</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1><a href="https://es.wikipedia.org/wiki/Juego_de_la_vida" target="_blank">Juego de la Vida de Conway</a></h1>
+
+    <div class="controles">
+        <label for="filas">Filas:</label>
+        <input type="number" id="filas" value="51" min="10" max="100" step="1">
+        <label for="columnas">Columnas:</label>
+        <input type="number" id="columnas" value="51" min="10" max="100" step="1">
+        <button id="crear-cuadricula">Crear Cuadrícula</button>
+        <button id="inicializar-aleatorio">Inicializar Aleatorio</button>
+
+        <label for="patrones">Patrones:</label>
+        <select id="patrones">
+            <option value="">Selecciona un patrón</option>
+        </select>
+
+        <button id="iniciar">Iniciar</button>
+        <button id="detener" disabled>Detener</button>
+        <button id="reiniciar">Reiniciar</button>
+        <button id="paso-a-paso">Paso a Paso</button>
+
+        <label for="velocidad">Velocidad:</label>
+        <input type="range" id="velocidad" min="50" max="1000" value="200">
+    </div>
+
+    <div class="informacion">
+        <p>Generación: <span id="generacion">0</span></p>
+        <p>Población: <span id="poblacion">0</span></p>
+        <div id="mensaje-estabilizacion">
+            La cuadrícula se ha estabilizado.
+        </div>
+    </div>
+
+    <div id="cuadricula">
+        <!-- La cuadrícula se generará aquí por JavaScript -->
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

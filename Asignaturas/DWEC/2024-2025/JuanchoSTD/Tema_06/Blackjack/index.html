@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="mesa-juego">
+        <div class="panel-info">
+            <div class="info-box">
+                <div class="info-label" id="label-mesa">Mesa:</div>
+                <div class="info-value" id="puntos-mesa"></div>
+            </div>
+            <div class="info-box">
+                <div class="info-label" id="label-jugador">Jugador:</div>
+                <div class="info-value" id="puntos-jugador"></div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Balance:</div>
+                <div class="info-value"><span id="balance"></span></div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Apuesta:</div>
+                <div class="info-value"><span id="apuesta"></span></div>
+            </div>
+        </div>
+
+
+        <div class="mazo">
+            <div class="carta-contenedor">
+                <div class="carta-inner">
+                    <div class="carta boca-abajo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="jugadores">
+            <div class="jugador-mano-contenedor">
+                <div class="cartas-en-juego-otros">
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="mensaje-resultado">
+
+        </div>
+
+        <div class="area-crupier">
+            <div class="cartas-en-juego" id="cartas-crupier">
+                
+            </div>
+        </div>
+        <div class="area-jugador">
+            <div class="cartas-en-juego" id="cartas-jugador">
+                
+            </div>
+        </div>
+
+        
+        <div class="acciones-usuario">
+            <button class="btn btn-nueva" id="btnNueva">Nueva partida</button>
+            <button class="btn btn-pedir" id="btnPedir">Pedir Carta</button>
+            <button class="btn btn-plantarse" id="btnPlantarse">Plantarse</button>
+            <button class="btn btn-auto" id="btnAuto">Automatizar jugador</button>
+        </div>
+    </div>
+</body>
+
+</html>

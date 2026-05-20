@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Manos al Barro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menu-toggle').addEventListener('click', function () {
+                document.getElementById('menu-principal').classList.toggle('activo');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- El header contiene menu, logo y carrito-->
+    <header>
+        <div class="contenedor contenedor-cabecera">
+            <div class="menu-hamburguesa" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img loading="lazy" src="assets/img/logo.png" alt="Manos al Barro">
+            </div>
+            <nav>
+                <ul class="menu" id="menu-principal">
+                    <li><a class="activo" href="inicio.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda</a></li>
+                    <li><a href="formulario_talleres.html">Talleres</a></li>
+                    <li><a href="#">Quienes somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito">
+                <a href="#carrito"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Principal-->
+    <main>
+        <!-- sección de presentacion cabecera, img , titulo etc-->
+        <section class="row cabecera-carrusel">
+            <div id="carouselCabecera" class="carousel slide col-md-11 col-lg-9" data-bs-ride="carousel">
+                <!-- Indicadores -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselCabecera" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#carouselCabecera" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselCabecera" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#carouselCabecera" data-bs-slide-to="3"></button>
+                </div>
+
+                <!-- Imágenes del carrusel -->
+                <div class="carousel-inner ">
+                    <div class="carousel-item active">
+                        <img loading="lazy" src="assets/img/Imagen_cabecera.png" class="w-100" alt="Manos al Barro">
+                        <div class="carousel-caption">
+                            <h1>Manos al Barro</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur. Egestas morbi turpis condimentum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img loading="lazy" src="assets/img/cabecera_tienda.png" class=" w-100" alt="Nuestra Tienda">
+                        <div class="carousel-caption">
+                            <h1>Nuestra Tienda</h1>
+                            <p>Descubre nuestros productos artesanales de cerámica.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img loading="lazy" src="assets/img/manos_con_barro.png" class=" w-100" alt="Talleres">
+                        <div class="carousel-caption">
+                            <h1>Talleres</h1>
+                            <p>Aprende el arte de la cerámica con nuestros expertos artesanos.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img loading="lazy" src="assets/img/formulario_talleres.jpg" class="w-100" alt="Inscripciones">
+                        <div class="carousel-caption">
+                            <h1>Inscripciones</h1>
+                            <p>Inscríbete a nuestros talleres y cursos de cerámica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controles del carrusel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCabecera"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCabecera"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <div class="introduccion">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <video width="100%" controls autoplay muted loop>
+                            <source src="assets/video/manos_al_barro_intro.mp4" type="video/mp4">
+                            <track src="assets/video/manos_al_barro_intro.vtt" kind="subtitles" srclang="es" label="Español" default>
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sección de presentación de la tienda-->
+        <section class="productos" id="tienda">
+            <div class="contenedor">
+                <div class="contenedor-producto">
+                    <div class="imagen-producto">
+                        <img loading="lazy" src="assets/img/tienda2.png" alt="Cerámica decorativa">
+                    </div>
+                    <div class="info-producto">
+                        <h3>Conoce</h3>
+                        <h2>Nuestros productos</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sed consectetur sed phasellus adipiscing eget.
+                            Dolor eros tortor massa amet integer amet vestibulum convallis. Laoreet eget neque
+                            viverra sed. Turpis pretium eleifend sed odio mauris.</p>
+                        <a href="tienda.html" class="btn">IR A LA TIENDA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de presentación de los cursos y talleres-->
+        <section class="talleres" id="talleres">
+            <div class="contenedor">
+                <div class="contenedor-taller">
+                    <div class="info-taller">
+                        <h3>Visita</h3>
+                        <h2>Nuestros talleres</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur. Sed consectetur sed phasellus adipiscing eget.
+                            Dolor eros tortor massa amet integer amet vestibulum convallis. Laoreet eget neque
+                            viverra sed. Turpis pretium eleifend sed odio mauris.</p>
+                        <a href="formulario_talleres.html" class="btn">VER CURSOS Y TALLERES</a>
+                    </div>
+                    <div class="imagen-taller">
+                        <img loading="lazy" src="assets/img/taller1.png" alt="Manos trabajando con barro">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto-->
+        <section class="contacto" id="contacto">
+            <div class="contenedor">
+                <h2>Contacta con nosotros</h2>
+                <form class="formulario-contacto">
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="nombre">Nombre*</label>
+                            <input type="text" id="nombre" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="telefono">Teléfono*</label>
+                            <input type="tel" id="telefono" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                    </div>
+                    <div class="fila-formulario">
+                        <div class="grupo-formulario">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" required>
+                            <small class="obligatorio">Campo obligatorio</small>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label for="asunto">Asunto</label>
+                            <input type="text" id="asunto">
+                            <small class="opcional">*Campos obligatorios</small>
+                        </div>
+                    </div>
+                    <div class="grupo-formulario ancho-completo">
+                        <label for="mensaje">Mensaje*</label>
+                        <textarea id="mensaje" rows="4" placeholder="Quiero información sobre los cursos..."
+                            required></textarea>
+                        <small class="obligatorio">Campo obligatorio</small>
+                    </div>
+                    <div class="boton-formulario">
+                        <button class="btn" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- El footer contiene dirección y acceso a las redes sociales-->
+    <footer>
+        <div class="contenedor">
+            <div class="contenedor-footer">
+                <div class="info-footer">
+                    <h3>Manos al Barro</h3>
+                    <p>C/ Lorem ipsum 23</p>
+                    <p>34567 Roma</p>
+                </div>
+                <div class="contacto-footer">
+                    <p>Teléfono:<br>456985896</p>
+                    <p>E-Mail:<br>contacto@manosalbarro.es</p>
+                </div>
+            </div>
+            <div class="redes-sociales">
+                <a href="twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="youtube.com"><i class="fab fa-youtube"></i></a>
+                <a href="instagram.com"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

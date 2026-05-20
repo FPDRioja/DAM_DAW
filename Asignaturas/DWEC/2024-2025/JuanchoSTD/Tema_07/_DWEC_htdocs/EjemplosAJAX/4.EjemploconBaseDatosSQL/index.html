@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <script src="script.js"></script>
+  <style>
+	#tabla{
+		background: silver;
+	}
+   </style>
+</head>
+
+<body onload="mostrarDatos()">
+  <div id="contenedor">
+    <div id="formulario">
+      <form>
+        <input type="hidden" id="oculto" name="oculto" value="0">
+        <select id="selectFilas" name="users" onchange="mostrarDatos(this.value)">
+          <option value="2">De 2 en 2</option>
+          <option value="4">De 4 en 4</option>
+          <option value="6">De 6 en 6</option>
+          <option value="8">De 8 en 8</option>
+        </select>
+        <input type="button" name="anadirEmp" value="Añadir empleado" onclick="insertarFila()">
+      </form>
+        
+        
+    </div>
+    <div id="tabla"></div>
+    <div id="paginacion">
+		<input type="button" name="anterior" value="Anterior" onclick="anterior()" disabled>
+		<input type="button" name="siguiente" value="Siguiente" onclick="siguiente()">
+    </div>
+  </div>
+
+</body>
+
+</html>
